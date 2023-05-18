@@ -1,0 +1,209 @@
+@import "../../style-config/mixins.scss";
+
+.register {
+    position: relative;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  
+  .arrow{
+    position: fixed;
+    left: 3rem;
+    top: 3rem;
+    width: 50px;
+    img{
+        width: 100%;
+    }
+  }
+  .container {
+    width: 95%;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+     gap: 3rem;
+     margin-bottom: 3rem;
+
+    h1 {
+      font-size: 5rem;
+      font-weight: 600;
+      color: #005642;
+      align-self: center;
+      margin: 3rem 0 6rem;
+      position: relative;
+      &::after{
+        content: "";
+        z-index: 2;
+        height: 4px;
+        width: 30%;
+        background-color:#005642;
+        position: absolute;
+        top: 100%;
+        right: 0;
+      }
+      @include screen750{
+        margin-bottom: 0;
+      }
+    }
+    .banner {
+      display: flex;
+    //   gap: 3rem;
+      width: 100%;
+      justify-content: space-between;
+      .left {
+        width: 40%;
+        @include screen750{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        img {
+          width: 100%;
+          max-width: 500px;
+          min-width: 300px;
+          @include screen550{
+            width: 50%;
+        }
+        }
+      }
+      .right {
+        width: 60%;
+        margin-right: 2rem;
+        @include screen750{
+            width: 90%;
+        }
+        form {
+         align-self: flex-end;
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          .errors{
+            color: red;
+            font-size: 1.8rem;
+            margin-left: 2rem;
+          }
+          .inputField {
+            background-color: #ebfff7;
+            width: 100%;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            padding: 2.5rem 3rem;
+            border-radius: 2rem;
+            .icon {
+              width: 4rem;
+              img {
+                width: 100%;
+                object-fit: cover;
+              }
+            }
+            .inputBox {
+              position: relative;
+
+              .label {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                color: #005642;
+                font-size: 1.8rem;
+                font-weight: 600;
+                pointer-events: none;
+                transition: 0.5s;
+              }
+              .input {
+                width: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+                font-size: 2rem;
+                color: #383838;
+                padding: 1rem 0;
+              }
+              .input:focus ~ .label,
+              .input:not(:placeholder-shown).input:not(:focus) ~ .label {
+                top: -0.5rem;
+              }
+            }
+          }
+          .cityCode {
+            display: flex;
+            gap: 2rem;
+          }
+          .checkBox {
+            background-color: #ebfff7;
+            width: 100%;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            padding: 2.5rem 3rem;
+            border-radius: 2rem;
+            input[type="checkbox"] {
+              
+                height: 30px;
+                width: 60px;
+                cursor: pointer;
+                
+            }
+            label {
+              font-style: normal;
+              font-weight: 400;
+              font-size: 2rem;
+              line-height: 121%;
+              color: #005642;
+            }
+          }
+          .btn{
+            align-self: flex-end;
+            background: #005642;
+            border-radius: 20px;
+            color: white;
+            font-weight: 500;
+            font-size: normal;
+            width: 50%;
+            font-size: 2.52rem;
+            padding: 2rem 0;
+            border: none;
+            cursor: pointer;
+            &:hover{
+              opacity: 0.7;
+            }
+            @include screen750{
+                width: 100%;
+            }
+            
+          }
+        }
+      }
+      @include screen750{
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+      }
+    }
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    top: -2%;
+    left: -68%;
+    background-color: #EBFFF7;
+    width: 103%;
+    height: 50%;
+    border-radius: 40%;
+    z-index: -1;
+    @include screen550{
+        top: -16%;
+    }
+}
+&:before{
+    content: "";
+    position: absolute;
+    top: -42%;
+    right: -5%;
+    background-color: #EBFFF7;
+    width: 50%;
+    height: 50%;
+    border-radius: 40%;
+    z-index: -1;
+}
+}

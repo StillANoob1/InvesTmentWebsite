@@ -1,0 +1,68 @@
+@import "../../style-config/mixins.scss";
+
+.navbar {
+  background-color: white;
+  position: relative;
+  height: 12rem;
+  z-index: 2;
+  border-bottom: 2px solid #383838;
+  .arrow {
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    width: 50px;
+    img {
+      width: 100%;
+    }
+    @include screen470 {
+      width: 35px;
+    }
+  }
+  .logo {
+    position: absolute;
+    right: 50%;
+    transform: translateX(-50%);
+    top: 5px;
+    width: 15rem;
+    img {
+      width: 100%;
+    }
+    @include screen470 {
+      left: 30%;
+    }
+  }
+  .alarm {
+    position: absolute;
+    right: 3rem;
+    top: 3rem;
+    width: 4rem;
+    img {
+      width: 100%;
+    }
+    @include screen470 {
+      width: 35px;
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: -15%;
+    left: -9%;
+    background-color: #ebfff7;
+    width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: -7%;
+    right: -8%;
+    background-color: #EBFFF7;
+    width: 30%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -1;
+}
+}

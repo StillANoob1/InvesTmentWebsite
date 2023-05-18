@@ -1,0 +1,38 @@
+@import "../../style-config/mixins.scss";
+
+.dashboard{
+    display: flex;
+    button{
+        padding: 1rem 3rem;
+        width: 35%;
+        outline: none;
+        border: none;
+        color: #383838;
+        font-weight: 500;
+        font-size: 2.5rem;
+        &.active{
+            background-color: #005642;
+            color: white;
+        }
+        @include screen750{
+            width: 45%;
+        }
+        @include screen470{
+            width: 50%;
+            font-size: 1.8rem;
+        }
+    }
+}
+.userDetails{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 2rem;
+    h1{
+        color:#005642 ;
+    }
+    span{
+        color: #383838;
+        font-size: 2rem;
+    }
+}
