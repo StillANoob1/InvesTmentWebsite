@@ -35,7 +35,7 @@ const Register = () => {
           });
           localStorage.setItem("currentUser", JSON.stringify(res.data.user))
           setUserData(res.data.user)
-          
+          navigate("/")
     
         } catch (err) {
             
