@@ -23,11 +23,11 @@ const App = () => {
   }
   const Layout = ()=>{
     return (
-      <div className='appNav'>
+      <div className='appNav' style={{overflowX:"hidden"}}>
         <Navbar/>
         <div style={{display:"flex"}}>
         <LeftBar user={user}/>
-        <div style={{flex:"4",overflowX:"hidden"}}>
+        <div style={{flex:"4"}}>
         <Outlet/>
         </div>
         </div>
