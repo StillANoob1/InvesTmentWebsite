@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import "./leftBar.scss";
 import hell from "../../assests/hell.svg";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Context } from '../../App';
 
 const LeftBar = ({user}) => {
   const [active, setActive] = useState("dash")
+  const{setUser}=useContext(Context);
 
   const navigate = useNavigate();
  
@@ -18,7 +20,7 @@ const LeftBar = ({user}) => {
         await axios.post(`https://investmentbackend-s9ny.onrender.com/logout`, {
             withCredentials: true
         })
-        localStorage.setItem("currentUser", null)
+        setUser("")
         navigate("/register");
       } catch (error) {
         console.log(error);

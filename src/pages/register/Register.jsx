@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./register.scss";
 import city from "../../assests/City.svg"
 import Country from "../../assests/Country.svg"
@@ -13,18 +13,17 @@ import arrow from "../../assests/arrow.svg"
 import axios from "axios";
 import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form";
+import { Context } from '../../App';
 const Register = () => {
-    const [userData, setUserData] = useState("")
-    const navigate= useNavigate();
-    if(userData){
-        return navigate("/")
-    }
+    const {setUser}=useContext(Context);
+    
     const {
         register,
         handleSubmit,
         formState: { errors },
     } = useForm();
     
+    const navigate=useNavigate();
      
       const onnSubmit = async(data)=>{
        try {
@@ -33,13 +32,13 @@ const Register = () => {
           },{
             withCredentials:true
           });
-          localStorage.setItem("currentUser", JSON.stringify(res.data.user))
-          setUserData(res.data.user)
+          setUser(res.data.user)
           navigate("/")
     
         } catch (err) {
-            
-          console.log(err.response?.data?.message)
+            console.log(err)
+            alert(err.response?.data?.message)
+         
         }
       }
   return (

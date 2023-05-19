@@ -43,6 +43,10 @@
       @include screen750{
         margin-bottom: 0;
       }
+      @include screen430{
+        margin-top: 6rem;
+        font-size: 4rem;
+      }
     }
     .banner {
       display: flex;

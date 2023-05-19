@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
 import Register from './pages/register/Register';
 import { createBrowserRouter,Navigate,Outlet,RouterProvider, } from "react-router-dom"
 import Navbar from './pages/navbar/Navbar';
@@ -9,8 +9,11 @@ import "./app.scss"
 import EditProfile from './pages/blankPage/EditProfile';
 import Network from './pages/blankPage/Network';
 import Help from './pages/blankPage/Help';
+
+export const Context = createContext();
+
 const App = () => {
-  const user = JSON.parse(localStorage.getItem("currentUser"))
+  const [user, setUser] = useState("");
   
   const ProtectedRoute=({children})=>{
     if(!user){
@@ -73,7 +76,9 @@ const App = () => {
   ])
   return (
    <>
+   <Context.Provider value={{user,setUser}}>
   <RouterProvider router={router} />
+  </Context.Provider>
    </>
   )
 }

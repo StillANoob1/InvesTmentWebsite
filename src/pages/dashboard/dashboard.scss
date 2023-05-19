@@ -21,6 +21,10 @@
             width: 50%;
             font-size: 1.8rem;
         }
+        @include screen430{
+            width: 50%;
+            font-size: 1.5rem;
+        }
     }
 }
 .userDetails{
@@ -34,5 +38,8 @@
     span{
         color: #383838;
         font-size: 2rem;
+        @include screen430{
+            font-size: 1.2rem;
+        }
     }
 }
